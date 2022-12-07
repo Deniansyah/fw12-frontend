@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Homepage = () => {
-    return(
+const Homewithsignin = () => {
+    return (
         <>
             <div id="navbar" className="mx-[130px]">
                 <div className="flex items-center my-3">
@@ -14,7 +14,7 @@ const Homepage = () => {
                         <Link to='/'>List Movie</Link>
                     </div>
                     <div>
-                        <Link to='/Signin' className="bg-violet-800 text-white rounded-md py-2 px-5">Sign Up</Link>
+                        <img className="w-[46px]" src={require('../assets/images/home-profil.png')} alt="profil foto" />
                     </div>
                 </div>
             </div>
@@ -154,4 +154,4 @@ const Homepage = () => {
     )
 }
 
-export default Homepage
+export default Homewithsignin

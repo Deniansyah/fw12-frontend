@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Signin = () => {
     return(
         <div className="flex h-screen">
-            <div className="basis-1/2 bgmanual">
+            <div className="basis-1/2 bg-[url('../images/background.png')]">
                 <div className="bg-violet-900/80 h-screen">
                     <div className="flex flex-col justify-center items-center h-screen">
                         <img className="w-96" src={require('../assets/images/tickitz-big.png')} alt="bg" />
