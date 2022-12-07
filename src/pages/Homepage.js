@@ -1,4 +1,5 @@
 import React from "react";
+import * as Icon from 'react-feather';
 import { Link } from "react-router-dom";
 
 const Homepage = () => {
@@ -11,10 +12,10 @@ const Homepage = () => {
                             <img src={require('../assets/images/tickitz-small-purple.png')} alt="logo" />
                         </div>
                         <Link to='/'>Home</Link>
-                        <Link to='/'>List Movie</Link>
+                        <Link to='/list-movie'>List Movie</Link>
                     </div>
                     <div>
-                        <Link to='/Signin' className="bg-violet-800 text-white rounded-md py-2 px-5">Sign Up</Link>
+                        <Link to='/sign-up' className="bg-violet-800 text-white rounded-md py-2 px-5">Sign Up</Link>
                     </div>
                 </div>
             </div>
@@ -29,28 +30,31 @@ const Homepage = () => {
                     </div>
                 </div>
             </div>
-            <div id="now-showing" className="mt-5 bg-gray-100 px-[130px] pt-[60px]">
+            <div id="now-showing" className="mt-5 bg-gray-100 px-[130px] py-[60px]">
                 <div className="flex mb-[40px]">
                     <div className="grow">
                         <h1 className="text-violet-800 text-xl font-bold">Now Showing</h1>
                     </div>
-                    <p className="text-violet-800">view all</p>
+                    <Link to='/list-movie' className="text-violet-800">view all</Link>
                 </div>
-                <div className="flex gap-5 pb-[60px]">
-                    <div className="w-[200px] h-[245px] border-2 border-white rounded-lg flex justify-center items-center">
-                        <img className="w-[120px]" src={require('../assets/images/film1-big.png')} alt="film1" />
+                <div className="flex gap-5 overflow-x-auto pb-2">
+                    <div className="p-6 border-2 border-white rounded-lg flex-none">
+                        <img className="w-[130px]" src={require('../assets/images/film1-big.png')} alt="film1" />
                     </div>
-                    <div className="w-[200px] h-[245px] border-2 border-white rounded-lg flex justify-center items-center">
-                        <img className="w-[120px]" src={require('../assets/images/film1-big.png')} alt="film1" />
+                    <div className="p-6 border-2 border-white rounded-lg flex-none">
+                        <img className="w-[130px]" src={require('../assets/images/film1-big.png')} alt="film1" />
                     </div>
-                    <div className="w-[200px] h-[245px] border-2 border-white rounded-lg flex justify-center items-center">
-                        <img className="w-[120px]" src={require('../assets/images/film1-big.png')} alt="film1" />
+                    <div className="p-6 border-2 border-white rounded-lg flex-none">
+                        <img className="w-[130px]" src={require('../assets/images/film1-big.png')} alt="film1" />
                     </div>
-                    <div className="w-[200px] h-[245px] border-2 border-white rounded-lg flex justify-center items-center">
-                        <img className="w-[120px]" src={require('../assets/images/film1-big.png')} alt="film1" />
+                    <div className="p-6 border-2 border-white rounded-lg flex-none">
+                        <img className="w-[130px]" src={require('../assets/images/film1-big.png')} alt="film1" />
                     </div>
-                    <div className="w-[200px] h-[245px] border-2 border-white rounded-lg flex justify-center items-center">
-                        <img className="w-[120px]" src={require('../assets/images/film1-big.png')} alt="film1" />
+                    <div className="p-6 border-2 border-white rounded-lg flex-none">
+                        <img className="w-[130px]" src={require('../assets/images/film1-big.png')} alt="film1" />
+                    </div>
+                    <div className="p-6 border-2 border-white rounded-lg flex-none">
+                        <img className="w-[130px]" src={require('../assets/images/film1-big.png')} alt="film1" />
                     </div>
                 </div>
             </div>
@@ -59,9 +63,9 @@ const Homepage = () => {
                     <div className="grow">
                         <h1 className="text-xl font-bold">Upcoming Movie</h1>
                     </div>
-                    <p className="ext-violet-800">view all</p>
+                    <Link to='/list-movie' className="text-violet-800">view all</Link>
                 </div>
-                <div className="flex gap-5 mb-[60px]">
+                <div className="flex gap-5 mb-[60px] overflow-x-auto pb-2">
                     <div className="bg-violet-800 text-white py-2 px-5 rounded-md border-2 border-violet-800">September</div>
                     <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">October</div>
                     <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">November</div>
@@ -70,51 +74,62 @@ const Homepage = () => {
                     <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">Februari</div>
                     <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">Maret</div>
                     <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">April</div>
+                    <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">Februari</div>
+                    <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">Maret</div>
+                    <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">April</div>
                 </div>
-                <div className="flex pb-[40px] gap-5">
-                    <div className="w-[200px] h-[380px] border-2 border-gray rounded-lg flex flex-col justify-center items-center">
-                        <img className="w-[120px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
+                <div className="flex pb-2 gap-5 overflow-x-auto">
+                    <div className="p-7 border-2 border-gray rounded-lg flex-none">
+                        <img className="w-[140px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
                         <div className="text-center">
                             <h2 className="text-lg font-bold">Spider-Man</h2>
                             <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                            <button className="bg-white text-violet-800 py-1 px-5 rounded-md border-2 border-violet-800 w-[100%]">Details</button>
+                            <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
                         </div>
                     </div>
-                    <div className="w-[200px] h-[380px] border-2 border-gray rounded-lg flex flex-col justify-center items-center">
-                        <img className="w-[120px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
+                    <div className="p-7 border-2 border-gray rounded-lg flex-none">
+                        <img className="w-[140px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
                         <div className="text-center">
                             <h2 className="text-lg font-bold">Spider-Man</h2>
                             <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                            <button className="bg-white text-violet-800 py-1 px-5 rounded-md border-2 border-violet-800 w-[100%]">Details</button>
+                            <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
                         </div>
                     </div>
-                    <div className="w-[200px] h-[380px] border-2 border-gray rounded-lg flex flex-col justify-center items-center">
-                        <img className="w-[120px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
+                    <div className="p-7 border-2 border-gray rounded-lg flex-none">
+                        <img className="w-[140px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
                         <div className="text-center">
                             <h2 className="text-lg font-bold">Spider-Man</h2>
                             <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                            <button className="bg-white text-violet-800 py-1 px-5 rounded-md border-2 border-violet-800 w-[100%]">Details</button>
+                            <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
                         </div>
                     </div>
-                    <div className="w-[200px] h-[380px] border-2 border-gray rounded-lg flex flex-col justify-center items-center">
-                        <img className="w-[120px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
+                    <div className="p-7 border-2 border-gray rounded-lg flex-none">
+                        <img className="w-[140px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
                         <div className="text-center">
                             <h2 className="text-lg font-bold">Spider-Man</h2>
                             <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                            <button className="bg-white text-violet-800 py-1 px-5 rounded-md border-2 border-violet-800 w-[100%]">Details</button>
+                            <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
                         </div>
                     </div>
-                    <div className="w-[200px] h-[380px] border-2 border-gray rounded-lg flex flex-col justify-center items-center">
-                        <img className="w-[120px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
+                    <div className="p-7 border-2 border-gray rounded-lg flex-none">
+                        <img className="w-[140px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
                         <div className="text-center">
                             <h2 className="text-lg font-bold">Spider-Man</h2>
                             <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                            <button className="bg-white text-violet-800 py-1 px-5 rounded-md border-2 border-violet-800 w-[100%]">Details</button>
+                            <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
+                        </div>
+                    </div>
+                    <div className="p-7 border-2 border-gray rounded-lg flex-none">
+                        <img className="w-[140px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
+                        <div className="text-center">
+                            <h2 className="text-lg font-bold">Spider-Man</h2>
+                            <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
+                            <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="text-center mb-[200px] border-1 rounded-md mx-[130px] py-[40px] shadow-xl">
+            <div id="subscribe" className="text-center mb-[180px] border-1 rounded-md mx-[130px] py-[40px] shadow-xl">
                 <h3 className="text-xl text-gray-700">Be the vanguard of the</h3>
                 <h1 className="text-5xl font-bold text-violet-800 mb-5">Moviegoers</h1>
                 <div className="flex justify-center gap-5 mb-5">
@@ -124,15 +139,15 @@ const Homepage = () => {
                 <p className="text-sm text-gray-500">By joining you as a Tickitz member,<br/> we will always send you the latest updates via email .</p>
             </div>
             <div id="footer" className="px-[130px]">
-                <div className="flex pb-[60px] gap-[90px]">
+                <div className="flex pb-[60px] gap-[80px]">
                     <div>
                         <img src={require('../assets/images/tickitz-small-purple.png')} alt="lgoo" />
                         <p className="text-gray-500 mt-4">Stop waiting in line. Buy<br/>tickets conveniently, watch movies quietly.</p>
                     </div>
-                    <div>
+                    <div className="flex flex-col">
                         <h3 className="font-bold pb-5">Explore</h3>
-                        <p className="text-gray-500">Home</p>
-                        <p className="text-gray-500">List Movie</p>
+                        <Link to='/' className="text-gray-500">Home</Link>
+                        <Link to='/list-movie' className="text-gray-500">List Movie</Link>
                     </div>
                     <div>
                         <h3 className="font-bold pb-5">Our Sponsor</h3>
@@ -142,10 +157,22 @@ const Homepage = () => {
                     </div>
                     <div>
                         <h3 className="font-bold pb-5">Follow Us</h3>
-                        <div className="text-gray-500 pb-5">Tickitz Cinema id</div>
-                        <div className="text-gray-500 pb-5">tickitz.id</div>
-                        <div className="text-gray-500 pb-5">tickitz.id</div>
-                        <div className="text-gray-500 pb-5">Tickitz Cinema id</div>
+                        <div className="flex text-gray-500 gap-2">
+                            <Icon.Facebook />
+                            <p className="pb-5">Tickitz Cinema id</p>
+                        </div>
+                        <div className="flex text-gray-500 gap-2">
+                            <Icon.Instagram />
+                            <p className="pb-5">tickitz.id</p>
+                        </div>
+                        <div className="flex text-gray-500 gap-2">
+                            <Icon.Twitter />
+                            <p className="pb-5">tickitz.id</p>
+                        </div>
+                        <div className="flex text-gray-500 gap-2">
+                            <Icon.Youtube />
+                            <p className="pb-5">Tickitz Cinema id</p>
+                        </div>
                     </div>
                 </div>
                 <div className="text-center pb-5 text-gray-500">© 2020 Tickitz. All Rights Reserved.</div>

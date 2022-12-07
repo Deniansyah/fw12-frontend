@@ -1,36 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Navbarlogin from "../components/Navbarlogin";
+import Footer from "../components/Footer";
 
 const Moviedetail = () => {
     return (
         <>
-            <div id="navbar" className="mx-[130px]">
-                <div className="flex items-center my-3">
-                    <div className="flex items-center grow gap-5">
-                        <div className="mr-12">
-                            <img src={require('../assets/images/tickitz-small-purple.png')} alt="logo" />
-                        </div>
-                        <Link to='/'>Home</Link>
-                        <Link to='/'>List Movie</Link>
-                    </div>
-                    <div>
-                        <img className="w-[46px]" src={require('../assets/images/home-profil.png')} alt="profil foto" />
-                    </div>
-                </div>
-            </div>
-            <div className="flex mx-[130px] gap-7 my-10">
-                <div className="basis-2/5">
+            <Navbarlogin></Navbarlogin>
+            <div className="flex mx-[130px] gap-4 my-16">
+                <div className="basis-[40%]">
                     <div className="border-2 flex justify-center items-center py-10 rounded-md">
                         <img src={require('../assets/images/film1-big.png')} alt="movie" />
                     </div>
                 </div>
-                <div className="basis-3/5">
+                <div className="basis-[70%]">
                     <div className="flex flex-col">
                         <div className="mb-7">
                             <h1 className="text-2xl font-bold pb-1">Spider-Man: Homecoming</h1>
                             <p className="text-gray-500">Adventure, Action, Sci-Fi</p>
                         </div>
-                        <div className="flex gap-7 pb-5 border-b ">
+                        <div className="flex gap-4 pb-5 border-b ">
                             <div className="flex flex-col gap-5">
                                 <div>
                                     <p className="text-gray-500">Release date</p>
@@ -60,12 +49,12 @@ const Moviedetail = () => {
                 </div>
             </div>
             <div className="px-[130px] py-10 bg-gray-100">
-                <div className="text-center">
+                <div className="text-center mb-10">
                     <h2 className="text-lg font-bold mb-5">Showtimes and Tickets</h2>
                     <div className="flex justify-center gap-5">
-                        <input className="py-2 px-7 rounded-md bg-gray-300" type="date" />
-                        <div className="bg-gray-300 pr-7 rounded-md">
-                            <select className="py-2 px-7 rounded-md bg-gray-300">
+                        <input className="py-2 px-7 rounded-md bg-gray-200" type="date" />
+                        <div className="bg-gray-200 pr-7 rounded-md">
+                            <select className="py-2 px-7 rounded-md bg-gray-200">
                                 <option>Purwokerto</option>
                                 <option></option>
                                 <option></option>
@@ -73,42 +62,177 @@ const Moviedetail = () => {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        
+                <div className="flex flex-wrap justify-center gap-5 mb-10">
+                    <div className="bg-white rounded-lg w-[18.6rem] flex-none">
+                        <div className="flex gap-5 border-b p-6">
+                            <div className="flex justify-center items-center">
+                                <img className="w-32" src={require('../assets/images/ebv.id.png')} alt="cinema ebv" />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-medium">ebv.id</h2>
+                                <p className="text-gray-500 text-sm">Whatever street No.12, South Purwokerto</p>
+                            </div>
+                        </div>
+                        <div className="p-6 flex flex-wrap gap-3 text-sm">
+                            <p className="text-gray-500">08:03am</p>
+                            <p className="text-gray-500">10:30pm</p>
+                            <p className="text-gray-500">12:00pm</p>
+                            <p className="text-gray-500">02:00pm</p>
+                            <p className="text-gray-500">04:30pm</p>
+                            <p className="text-gray-500">07:00pm</p>
+                            <p className="text-gray-500">08:00pm</p>
+                        </div>
+                        <div className="p-6 flex">
+                            <p className="text-lg text-gray-500 grow">Price</p>
+                            <h2 className="text-lg font-bold">$10.00/seat</h2>
+                        </div>
+                        <div className="p-6 text-center mb-2">
+                            <Link to='/order' className="bg-violet-800 py-3 px-20 text-white rounded-md">Book now</Link>
+                        </div>
                     </div>
-                    <div>
-                        
+                    <div className="bg-white rounded-lg w-[18.6rem] flex-none">
+                        <div className="flex gap-5 border-b p-6">
+                            <div className="flex justify-center items-center">
+                                <img className="w-32" src={require('../assets/images/ebv.id.png')} alt="cinema ebv" />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-medium">ebv.id</h2>
+                                <p className="text-gray-500 text-sm">Whatever street No.12, South Purwokerto</p>
+                            </div>
+                        </div>
+                        <div className="p-6 flex flex-wrap gap-3 text-sm">
+                            <p className="text-gray-500">08:03am</p>
+                            <p className="text-gray-500">10:30pm</p>
+                            <p className="text-gray-500">12:00pm</p>
+                            <p className="text-gray-500">02:00pm</p>
+                            <p className="text-gray-500">04:30pm</p>
+                            <p className="text-gray-500">07:00pm</p>
+                            <p className="text-gray-500">08:00pm</p>
+                        </div>
+                        <div className="p-6 flex">
+                            <p className="text-lg text-gray-500 grow">Price</p>
+                            <h2 className="text-lg font-bold">$10.00/seat</h2>
+                        </div>
+                        <div className="p-6 text-center mb-2">
+                            <Link to='/order' className="bg-violet-800 py-3 px-20 text-white rounded-md">Book now</Link>
+                        </div>
+                    </div>
+                    <div className="bg-white rounded-lg w-[18.6rem] flex-none">
+                        <div className="flex gap-5 border-b p-6">
+                            <div className="flex justify-center items-center">
+                                <img className="w-32" src={require('../assets/images/ebv.id.png')} alt="cinema ebv" />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-medium">ebv.id</h2>
+                                <p className="text-gray-500 text-sm">Whatever street No.12, South Purwokerto</p>
+                            </div>
+                        </div>
+                        <div className="p-6 flex flex-wrap gap-3 text-sm">
+                            <p className="text-gray-500">08:03am</p>
+                            <p className="text-gray-500">10:30pm</p>
+                            <p className="text-gray-500">12:00pm</p>
+                            <p className="text-gray-500">02:00pm</p>
+                            <p className="text-gray-500">04:30pm</p>
+                            <p className="text-gray-500">07:00pm</p>
+                            <p className="text-gray-500">08:00pm</p>
+                        </div>
+                        <div className="p-6 flex">
+                            <p className="text-lg text-gray-500 grow">Price</p>
+                            <h2 className="text-lg font-bold">$10.00/seat</h2>
+                        </div>
+                        <div className="p-6 text-center mb-2">
+                            <Link to='/order' className="bg-violet-800 py-3 px-20 text-white rounded-md">Book now</Link>
+                        </div>
+                    </div>
+                    <div className="bg-white rounded-lg w-[18.6rem] flex-none">
+                        <div className="flex gap-5 border-b p-6">
+                            <div className="flex justify-center items-center">
+                                <img className="w-32" src={require('../assets/images/ebv.id.png')} alt="cinema ebv" />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-medium">ebv.id</h2>
+                                <p className="text-gray-500 text-sm">Whatever street No.12, South Purwokerto</p>
+                            </div>
+                        </div>
+                        <div className="p-6 flex flex-wrap gap-3 text-sm">
+                            <p className="text-gray-500">08:03am</p>
+                            <p className="text-gray-500">10:30pm</p>
+                            <p className="text-gray-500">12:00pm</p>
+                            <p className="text-gray-500">02:00pm</p>
+                            <p className="text-gray-500">04:30pm</p>
+                            <p className="text-gray-500">07:00pm</p>
+                            <p className="text-gray-500">08:00pm</p>
+                        </div>
+                        <div className="p-6 flex">
+                            <p className="text-lg text-gray-500 grow">Price</p>
+                            <h2 className="text-lg font-bold">$10.00/seat</h2>
+                        </div>
+                        <div className="p-6 text-center mb-2">
+                            <Link to='/order' className="bg-violet-800 py-3 px-20 text-white rounded-md">Book now</Link>
+                        </div>
+                    </div>
+                    <div className="bg-white rounded-lg w-[18.6rem] flex-none">
+                        <div className="flex gap-5 border-b p-6">
+                            <div className="flex justify-center items-center">
+                                <img className="w-32" src={require('../assets/images/ebv.id.png')} alt="cinema ebv" />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-medium">ebv.id</h2>
+                                <p className="text-gray-500 text-sm">Whatever street No.12, South Purwokerto</p>
+                            </div>
+                        </div>
+                        <div className="p-6 flex flex-wrap gap-3 text-sm">
+                            <p className="text-gray-500">08:03am</p>
+                            <p className="text-gray-500">10:30pm</p>
+                            <p className="text-gray-500">12:00pm</p>
+                            <p className="text-gray-500">02:00pm</p>
+                            <p className="text-gray-500">04:30pm</p>
+                            <p className="text-gray-500">07:00pm</p>
+                            <p className="text-gray-500">08:00pm</p>
+                        </div>
+                        <div className="p-6 flex">
+                            <p className="text-lg text-gray-500 grow">Price</p>
+                            <h2 className="text-lg font-bold">$10.00/seat</h2>
+                        </div>
+                        <div className="p-6 text-center mb-2">
+                            <Link to='/order' className="bg-violet-800 py-3 px-20 text-white rounded-md">Book now</Link>
+                        </div>
+                    </div>
+                    <div className="bg-white rounded-lg w-[18.6rem] flex-none">
+                        <div className="flex gap-5 border-b p-6">
+                            <div className="flex justify-center items-center">
+                                <img className="w-32" src={require('../assets/images/ebv.id.png')} alt="cinema ebv" />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-medium">ebv.id</h2>
+                                <p className="text-gray-500 text-sm">Whatever street No.12, South Purwokerto</p>
+                            </div>
+                        </div>
+                        <div className="p-6 flex flex-wrap gap-3 text-sm">
+                            <p className="text-gray-500">08:03am</p>
+                            <p className="text-gray-500">10:30pm</p>
+                            <p className="text-gray-500">12:00pm</p>
+                            <p className="text-gray-500">02:00pm</p>
+                            <p className="text-gray-500">04:30pm</p>
+                            <p className="text-gray-500">07:00pm</p>
+                            <p className="text-gray-500">08:00pm</p>
+                        </div>
+                        <div className="p-6 flex">
+                            <p className="text-lg text-gray-500 grow">Price</p>
+                            <h2 className="text-lg font-bold">$10.00/seat</h2>
+                        </div>
+                        <div className="p-6 text-center mb-2">
+                            <Link to='/order' className="bg-violet-800 py-3 px-20 text-white rounded-md">Book now</Link>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="footer" className="px-[130px] pt-16">
-                <div className="flex pb-[60px] gap-[90px]">
-                    <div>
-                        <img src={require('../assets/images/tickitz-small-purple.png')} alt="lgoo" />
-                        <p className="text-gray-500 mt-4">Stop waiting in line. Buy<br/>tickets conveniently, watch movies quietly.</p>
-                    </div>
-                    <div>
-                        <h3 className="font-bold pb-5">Explore</h3>
-                        <p className="text-gray-500">Home</p>
-                        <p className="text-gray-500">List Movie</p>
-                    </div>
-                    <div>
-                        <h3 className="font-bold pb-5">Our Sponsor</h3>
-                        <img className="pb-5" src={require('../assets/images/ebv.id.png')} alt="ebv" />
-                        <img className="pb-5" src={require('../assets/images/CineOne21.png')} alt="cn21" />
-                        <img className="pb-5" src={require('../assets/images/hiflix.png')} alt="hiflix" />
-                    </div>
-                    <div>
-                        <h3 className="font-bold pb-5">Follow Us</h3>
-                        <div className="text-gray-500 pb-5">Tickitz Cinema id</div>
-                        <div className="text-gray-500 pb-5">tickitz.id</div>
-                        <div className="text-gray-500 pb-5">tickitz.id</div>
-                        <div className="text-gray-500 pb-5">Tickitz Cinema id</div>
-                    </div>
+                <div className="flex justify-center">
+                    <div className="text-gray-400">__________________________________________________</div>
+                    <p className="text-center bg-gray-100 w-40 text-violet-800">view all</p>
+                    <div className="text-gray-400">__________________________________________________</div>
                 </div>
-                <div className="text-center pb-5 text-gray-500">© 2020 Tickitz. All Rights Reserved.</div>
             </div>
+            <Footer></Footer>
         </>
     )
 }
