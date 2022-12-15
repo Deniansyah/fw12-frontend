@@ -88,10 +88,10 @@ const Paymentpage = () => {
                     </div>
                     <div className="flex">
                         <div className="grow">
-                            <Link to='/order' className="border-2 border-violet-800 py-2 px-8 rounded-md text-violet-800">Prvious step</Link>
+                            <Link to='/order' className="border-2 border-violet-800 py-2 px-2 w-56 flex justify-center rounded-md text-violet-800">Prvious step</Link>
                         </div>
                         <div>
-                            <Link to='/history' className="border-2 border-violet-800 py-2 px-8 rounded-md text-white bg-violet-800">Pay your order</Link>
+                            <Link to='/history' className="border-2 border-violet-800 py-2 px-2 w-56 flex justify-center rounded-md text-white bg-violet-800">Pay your order</Link>
                         </div>
                     </div>
                 </div>

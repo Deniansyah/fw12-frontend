@@ -47,7 +47,7 @@ const Listmovie = () => {
                             <div className="text-center">
                                 <h2 className="text-lg font-bold">Spider-Man</h2>
                                 <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                                <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
+                                <Link to='/movie-detail' className="bg-white text-violet-800 py-1 px-2 flex justify-center rounded-md border-2 border-violet-800 w-full">Details</Link>
                             </div>
                         </div>
                         <div className="p-7 border-2 border-gray rounded-lg flex-none">
@@ -55,7 +55,7 @@ const Listmovie = () => {
                             <div className="text-center">
                                 <h2 className="text-lg font-bold">Spider-Man</h2>
                                 <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                                <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
+                                <Link to='/movie-detail' className="bg-white text-violet-800 py-1 px-2 flex justify-center rounded-md border-2 border-violet-800 w-full">Details</Link>
                             </div>
                         </div>
                         <div className="p-7 border-2 border-gray rounded-lg flex-none">
@@ -63,7 +63,7 @@ const Listmovie = () => {
                             <div className="text-center">
                                 <h2 className="text-lg font-bold">Spider-Man</h2>
                                 <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                                <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
+                                <Link to='/movie-detail' className="bg-white text-violet-800 py-1 px-2 flex justify-center rounded-md border-2 border-violet-800 w-full">Details</Link>
                             </div>
                         </div>
                         <div className="p-7 border-2 border-gray rounded-lg flex-none">
@@ -71,7 +71,7 @@ const Listmovie = () => {
                             <div className="text-center">
                                 <h2 className="text-lg font-bold">Spider-Man</h2>
                                 <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                                <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
+                                <Link to='/movie-detail' className="bg-white text-violet-800 py-1 px-2 flex justify-center rounded-md border-2 border-violet-800 w-full">Details</Link>
                             </div>
                         </div>
                         <div className="p-7 border-2 border-gray rounded-lg flex-none">
@@ -79,7 +79,7 @@ const Listmovie = () => {
                             <div className="text-center">
                                 <h2 className="text-lg font-bold">Spider-Man</h2>
                                 <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                                <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
+                                <Link to='/movie-detail' className="bg-white text-violet-800 py-1 px-2 flex justify-center rounded-md border-2 border-violet-800 w-full">Details</Link>
                             </div>
                         </div>
                         <div className="p-7 border-2 border-gray rounded-lg flex-none">
@@ -87,7 +87,7 @@ const Listmovie = () => {
                             <div className="text-center">
                                 <h2 className="text-lg font-bold">Spider-Man</h2>
                                 <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                                <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
+                                <Link to='/movie-detail' className="bg-white text-violet-800 py-1 px-2 flex justify-center rounded-md border-2 border-violet-800 w-full">Details</Link>
                             </div>
                         </div>
                         <div className="p-7 border-2 border-gray rounded-lg flex-none">
@@ -95,7 +95,7 @@ const Listmovie = () => {
                             <div className="text-center">
                                 <h2 className="text-lg font-bold">Spider-Man</h2>
                                 <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                                <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
+                                <Link to='/movie-detail' className="bg-white text-violet-800 py-1 px-2 flex justify-center rounded-md border-2 border-violet-800 w-full">Details</Link>
                             </div>
                         </div>
                         <div className="p-7 border-2 border-gray rounded-lg flex-none">
@@ -103,13 +103,13 @@ const Listmovie = () => {
                             <div className="text-center">
                                 <h2 className="text-lg font-bold">Spider-Man</h2>
                                 <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                                <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
+                                <Link to='/movie-detail' className="bg-white text-violet-800 py-1 px-2 flex justify-center rounded-md border-2 border-violet-800 w-full">Details</Link>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="flex gap-5 justify-center">
-                    <div className="bg-violet-800 text-white rounded-md py-1 px-3">1</div>
+                    <div className="bg-violet-800 text-white rounded-md py-1 px-3 shadow-lg">1</div>
                     <div className="bg-white rounded-md py-1 px-3">2</div>
                     <div className="bg-white rounded-md py-1 px-3">3</div>
                     <div className="bg-white rounded-md py-1 px-3">4</div>

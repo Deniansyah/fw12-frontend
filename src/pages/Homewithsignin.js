@@ -1,9 +1,44 @@
 import React from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
-import Navbarlogin from "../components/Navbarlogin";
-import Footer from "../components/Footer";
+import Card from "../components/card";
+import Card2 from "../components/card2";
+import Navbarlogin from "../components/Navbarlogin"
+import Footer from "../components/Footer"
 
 const Homewithsignin = () => {
+    // nowshowing
+    const [nowShowing, setNowShowing] = React.useState([])
+    React.useEffect(() => {
+        getNowShowing().then((data) => {
+            setNowShowing(data.results)
+        })
+
+    }, [])
+
+    const getNowShowing = async () => {
+        const {data} = await axios.get(
+            "http://localhost:8888/movies/now"
+        )
+        return data
+    }
+
+    // upcoming
+    const [upcoming, setUpcoming] = React.useState([])
+    React.useEffect(() => {
+        getUpcoming().then((data) => {
+            setUpcoming(data.results)
+        })
+
+    }, [])
+
+    const getUpcoming = async () => {
+        const {data} = await axios.get(
+            "http://localhost:8888/movies/upcoming?month=10"
+        )
+        return data
+    }
+
     return (
         <>
             <Navbarlogin></Navbarlogin>
@@ -21,28 +56,26 @@ const Homewithsignin = () => {
             <div id="now-showing" className="mt-5 bg-gray-100 px-[130px] py-[60px]">
                 <div className="flex mb-[40px]">
                     <div className="grow">
-                        <h1 className="text-violet-800 text-xl font-bold">Now Showing</h1>
+                        <div className="flex flex-col w-fit gap-3 justify-center items-center">
+                            <h1 className="text-violet-800 text-xl font-bold">Now Showing</h1>
+                            <div className="border-b border-2 border-violet-800 w-[70%] rounded-lg"></div>
+                        </div>
                     </div>
                     <Link to='/list-movie' className="text-violet-800">view all</Link>
                 </div>
-                <div className="flex gap-5 overflow-x-auto pb-2">
-                    <div className="p-6 border-2 border-white rounded-lg flex-none">
+                <div className="flex gap-5 overflow-x-auto pb-2 items-start">
+                    {nowShowing?.map((item) => {
+                        return (
+                            <Card data={item} />
+                        )
+                    })}
+                    <div className="group p-6 border-2 border-white rounded-lg flex-none text-center hover:bg-white">
                         <img className="w-[130px]" src={require('../assets/images/film1-big.png')} alt="film1" />
-                    </div>
-                    <div className="p-6 border-2 border-white rounded-lg flex-none">
-                        <img className="w-[130px]" src={require('../assets/images/film1-big.png')} alt="film1" />
-                    </div>
-                    <div className="p-6 border-2 border-white rounded-lg flex-none">
-                        <img className="w-[130px]" src={require('../assets/images/film1-big.png')} alt="film1" />
-                    </div>
-                    <div className="p-6 border-2 border-white rounded-lg flex-none">
-                        <img className="w-[130px]" src={require('../assets/images/film1-big.png')} alt="film1" />
-                    </div>
-                    <div className="p-6 border-2 border-white rounded-lg flex-none">
-                        <img className="w-[130px]" src={require('../assets/images/film1-big.png')} alt="film1" />
-                    </div>
-                    <div className="p-6 border-2 border-white rounded-lg flex-none">
-                        <img className="w-[130px]" src={require('../assets/images/film1-big.png')} alt="film1" />
+                        <div className="hidden group-hover:block">
+                            <h2 className="text-lg font-bold mt-2">Spider-Man</h2>
+                            <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
+                            <Link to='/movie-detail' className="bg-white text-violet-800 py-1 px-2 flex w-full justify-center rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -67,52 +100,17 @@ const Homewithsignin = () => {
                     <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">April</div>
                 </div>
                 <div className="flex pb-2 gap-5 overflow-x-auto">
+                    {upcoming?.map((item) => {
+                        return (
+                            <Card2 data={item} />
+                        )
+                    })}
                     <div className="p-7 border-2 border-gray rounded-lg flex-none">
                         <img className="w-[140px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
                         <div className="text-center">
                             <h2 className="text-lg font-bold">Spider-Man</h2>
                             <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                            <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
-                        </div>
-                    </div>
-                    <div className="p-7 border-2 border-gray rounded-lg flex-none">
-                        <img className="w-[140px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
-                        <div className="text-center">
-                            <h2 className="text-lg font-bold">Spider-Man</h2>
-                            <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                            <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
-                        </div>
-                    </div>
-                    <div className="p-7 border-2 border-gray rounded-lg flex-none">
-                        <img className="w-[140px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
-                        <div className="text-center">
-                            <h2 className="text-lg font-bold">Spider-Man</h2>
-                            <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                            <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
-                        </div>
-                    </div>
-                    <div className="p-7 border-2 border-gray rounded-lg flex-none">
-                        <img className="w-[140px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
-                        <div className="text-center">
-                            <h2 className="text-lg font-bold">Spider-Man</h2>
-                            <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                            <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
-                        </div>
-                    </div>
-                    <div className="p-7 border-2 border-gray rounded-lg flex-none">
-                        <img className="w-[140px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
-                        <div className="text-center">
-                            <h2 className="text-lg font-bold">Spider-Man</h2>
-                            <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                            <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
-                        </div>
-                    </div>
-                    <div className="p-7 border-2 border-gray rounded-lg flex-none">
-                        <img className="w-[140px] pb-5" src={require('../assets/images/film1-big.png')} alt="film1" />
-                        <div className="text-center">
-                            <h2 className="text-lg font-bold">Spider-Man</h2>
-                            <p className="text-sm text-gray-400 pb-5">Action, Marvel, Sci-Fi</p>
-                            <Link to='/movie-detail' className="bg-white text-violet-800 py-2 px-10 rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
+                            <Link to='/movie-detail' className="bg-white text-violet-800 py-1 px-2 flex w-full justify-center rounded-md border-2 border-violet-800 w-[100%]">Details</Link>
                         </div>
                     </div>
                 </div>

@@ -17,9 +17,9 @@ const Orderpage = () => {
           <h1 className="text-xl font-bold mb-3">Choose Your Seat</h1>
           <div className="flex flex-col bg-white p-7 rounded-md mb-10">
             <div>
-              <div className="mb-5">
+              <div className="mb-5 flex flex-col justify-center items-center">
                 <p className="text-center mb-1">Screen</p>
-                <div className="border-[#D6D8E7] border-2 rounded-md w-full"></div>
+                <div className="border-[#D6D8E7] border-2 rounded-md w-[81%]"></div>
               </div>
               <div className="flex gap-5 justify-center">
                 <div className="grid grid-cols-8 gap-1">
@@ -168,10 +168,10 @@ const Orderpage = () => {
           </div>
           <div className="flex">
             <div className="grow">
-              <Link to='/list-movie' className="border-2 border-violet-800 py-2 px-8 rounded-md text-violet-800">Change your movie</Link>
+              <Link to='/list-movie' className="border-2 border-violet-800 py-2 px-2 w-56 flex justify-center rounded-md text-violet-800">Change your movie</Link>
             </div>
             <div>
-              <Link to='/payment' className="border-2 border-violet-800 py-2 px-8 rounded-md text-white bg-violet-800">Checkout now</Link>
+              <Link to='/payment' className="border-2 border-violet-800 py-2 px-2 w-56 flex justify-center rounded-md text-white bg-violet-800">Checkout now</Link>
             </div>
           </div>
         </div>

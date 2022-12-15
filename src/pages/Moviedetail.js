@@ -7,7 +7,7 @@ const Moviedetail = () => {
     return (
         <>
             <Navbarlogin></Navbarlogin>
-            <div className="flex mx-[130px] gap-4 my-16">
+            <div className="flex mx-[130px] gap-10 my-16">
                 <div className="basis-[40%]">
                     <div className="border-2 flex justify-center items-center py-10 rounded-md">
                         <img src={require('../assets/images/film1-big.png')} alt="movie" />
@@ -19,7 +19,7 @@ const Moviedetail = () => {
                             <h1 className="text-2xl font-bold pb-1">Spider-Man: Homecoming</h1>
                             <p className="text-gray-500">Adventure, Action, Sci-Fi</p>
                         </div>
-                        <div className="flex gap-4 pb-5 border-b ">
+                        <div className="flex gap-10 pb-5 border-b ">
                             <div className="flex flex-col gap-5">
                                 <div>
                                     <p className="text-gray-500">Release date</p>
@@ -52,9 +52,9 @@ const Moviedetail = () => {
                 <div className="text-center mb-10">
                     <h2 className="text-lg font-bold mb-5">Showtimes and Tickets</h2>
                     <div className="flex justify-center gap-5">
-                        <input className="py-2 px-7 rounded-md bg-gray-200" type="date" />
-                        <div className="bg-gray-200 pr-7 rounded-md">
-                            <select className="py-2 px-7 rounded-md bg-gray-200">
+                        <input className="py-2 px-7 w-56 rounded-md bg-gray-200 focus:outline-none" type="date" />
+                        <div className="bg-gray-200 pr-5 rounded-md">
+                            <select className="py-2 px-7 w-56 rounded-md bg-gray-200 focus:outline-none">
                                 <option>Purwokerto</option>
                                 <option></option>
                                 <option></option>
@@ -87,7 +87,7 @@ const Moviedetail = () => {
                             <h2 className="text-lg font-bold">$10.00/seat</h2>
                         </div>
                         <div className="p-6 text-center mb-2">
-                            <Link to='/order' className="bg-violet-800 py-3 px-20 text-white rounded-md">Book now</Link>
+                            <Link to='/order' className="bg-violet-800 py-3 px-3 w-full flex justify-center text-white rounded-md">Book now</Link>
                         </div>
                     </div>
                     <div className="bg-white rounded-lg w-[18.6rem] flex-none">
@@ -114,7 +114,7 @@ const Moviedetail = () => {
                             <h2 className="text-lg font-bold">$10.00/seat</h2>
                         </div>
                         <div className="p-6 text-center mb-2">
-                            <Link to='/order' className="bg-violet-800 py-3 px-20 text-white rounded-md">Book now</Link>
+                            <Link to='/order' className="bg-violet-800 py-3 px-3 w-full flex justify-center text-white rounded-md">Book now</Link>
                         </div>
                     </div>
                     <div className="bg-white rounded-lg w-[18.6rem] flex-none">
@@ -141,7 +141,7 @@ const Moviedetail = () => {
                             <h2 className="text-lg font-bold">$10.00/seat</h2>
                         </div>
                         <div className="p-6 text-center mb-2">
-                            <Link to='/order' className="bg-violet-800 py-3 px-20 text-white rounded-md">Book now</Link>
+                            <Link to='/order' className="bg-violet-800 py-3 px-3 w-full flex justify-center text-white rounded-md">Book now</Link>
                         </div>
                     </div>
                     <div className="bg-white rounded-lg w-[18.6rem] flex-none">
@@ -168,7 +168,7 @@ const Moviedetail = () => {
                             <h2 className="text-lg font-bold">$10.00/seat</h2>
                         </div>
                         <div className="p-6 text-center mb-2">
-                            <Link to='/order' className="bg-violet-800 py-3 px-20 text-white rounded-md">Book now</Link>
+                            <Link to='/order' className="bg-violet-800 py-3 px-3 w-full flex justify-center text-white rounded-md">Book now</Link>
                         </div>
                     </div>
                     <div className="bg-white rounded-lg w-[18.6rem] flex-none">
@@ -195,7 +195,7 @@ const Moviedetail = () => {
                             <h2 className="text-lg font-bold">$10.00/seat</h2>
                         </div>
                         <div className="p-6 text-center mb-2">
-                            <Link to='/order' className="bg-violet-800 py-3 px-20 text-white rounded-md">Book now</Link>
+                            <Link to='/order' className="bg-violet-800 py-3 px-3 w-full flex justify-center text-white rounded-md">Book now</Link>
                         </div>
                     </div>
                     <div className="bg-white rounded-lg w-[18.6rem] flex-none">
@@ -222,7 +222,7 @@ const Moviedetail = () => {
                             <h2 className="text-lg font-bold">$10.00/seat</h2>
                         </div>
                         <div className="p-6 text-center mb-2">
-                            <Link to='/order' className="bg-violet-800 py-3 px-20 text-white rounded-md">Book now</Link>
+                            <Link to='/order' className="bg-violet-800 py-3 px-3 w-full flex justify-center text-white rounded-md">Book now</Link>
                         </div>
                     </div>
                 </div>

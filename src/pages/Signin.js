@@ -1,8 +1,22 @@
 import React from "react";
 import * as Icon from "react-feather";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signin = () => {
+    const [showAlert, setShowAlert] = React.useState(false)
+    const navigate = useNavigate()
+
+    const loginRequest = (event) => {
+        const { value: email } = event.target.email;
+        const { value: password } = event.target.password;
+        if (email === 'admin@mail.com' && password === '1234') {
+            navigate('/home')
+        }else {
+            setShowAlert(true)
+        }
+        event.preventDefault()
+    }
+
     return(
         <div className="flex h-screen">
             <div className="md:basis-1/2 bg-[url('../images/background.png')] hidden md:block">
@@ -17,16 +31,19 @@ const Signin = () => {
                 <div className="p-20">
                     <h1 className="text-5xl font-bold pb-4">Sign In</h1>
                     <p className="text-slate-400 pb-5 text-lg">Sign in with your data that you entered during your registration</p>
-                    <form>
+                    {showAlert && (<div className="bg-red-300 border border-red-600  rounded px-5 py-3 text-center">
+                        <span>Wrong email or password</span>
+                    </div>)}
+                    <form onSubmit={loginRequest}>
                         <div className="flex flex-col py-5">
-                            <label>Email</label>
-                            <input className="p-3 my-2 rounded-lg border border-slate-400 mb-4" type="email" placeholder="Write your email" />
-                            <label>Password</label>
+                            <label id="email">Email</label>
+                            <input className="p-3 my-2 rounded-lg border border-slate-400 mb-4" type="email" name="email" placeholder="Write your email" />
+                            <label id="password">Password</label>
                             <div className="relative">
                                 <Icon.Eye className="absolute right-5 top-5 text-gray-400"/>
-                                <input className="p-3 my-2 rounded-lg border border-slate-400 mb-4 w-[100%]" type="password" placeholder="Write your password" />
+                                <input className="p-3 my-2 rounded-lg border border-slate-400 mb-4 w-[100%]" type="password" name="password" placeholder="Write your password" />
                             </div>
-                            <Link to='/home' className="mt-5 bg-violet-800 text-white py-3 rounded-lg text-center">Sign In</Link>
+                            <button type="submit" className="mt-5 bg-violet-800 text-white py-3 rounded-lg text-center">Sign In</button >
                         </div>
                     </form>
                     <div className="text-center gap-2">

@@ -11,12 +11,12 @@ const Historypage = () => {
                 <div className="basis-[1/4]">
                     <div className="bg-white rounded-md shadow-lg">
                         <h3 className="text-gray-500 px-8 py-4">INFO</h3>
-                        <div className="flex flex-col justify-center items-center pb-3 mb-4 border-b px-8">
+                        <div className="flex flex-col justify-center items-center pb-3 border-b px-8">
                             <img className="w-32" src={require('../assets/images/profil.png')} alt="profil" />
                             <h2 className="font-bold">Jonas El Rodriguez</h2>
-                            <p>Moviegoers</p>
+                            <p className="text-sm text-gray-400">Moviegoers</p>
                         </div>
-                        <div className="px-8 pb-4">
+                        <div className="px-8 my-5 pb-5">
                             <Link to='/' className="text-center bg-violet-800 py-2 px-10 rounded-md text-white">Logout</Link>
                         </div>
                     </div>

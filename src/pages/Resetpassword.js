@@ -13,9 +13,9 @@ const Resetpassword = () => {
                         <p className="text-gray-300 text-lg mb-8">To be able to use your account again, please<br/>complete the following steps.</p>
                         <div className="flex gap-5">
                             <div className="w-14 flex flex-col gap-6">
-                                <div className="flex justify-center items-center font-bold text-violet-800 border-2 border-white bg-white rounded-full py-3.5 px4">1</div>
-                                <div className="flex justify-center items-center font-bold text-white border-2 border-white rounded-full py-3.5 px4">2</div>
-                                <div className="flex justify-center items-center font-bold text-white border-2 border-white rounded-full py-3.5 px4">3</div>
+                                <div className="flex justify-center items-center font-bold text-white border-2 border-white rounded-full py-3.5 px4 after:content-[''] after:border-2 after:border-r after:border-white after:h-7 after:absolute relative after:right-6 after:top-[52px]">1</div>
+                                <div className="flex justify-center items-center font-bold text-white border-2 border-white rounded-full py-3.5 px4 after:content-[''] after:border-2 after:border-r after:border-white after:h-7 after:absolute relative after:right-6 after:top-[52px]">2</div>
+                                <div className="flex justify-center items-center font-bold text-violet-800 border-2 border-white bg-white rounded-full py-3.5 px4 after:content-[''] after:border-2 after:border-r after:border-white after:h-7 after:absolute relative after:right-6 after:top-[52px]">3</div>
                                 <div className="flex justify-center items-center font-bold text-white border-2 border-white rounded-full py-3.5 px4">4</div>
                             </div>
                             <div className="flex flex-col gap-6">

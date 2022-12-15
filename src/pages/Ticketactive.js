@@ -19,7 +19,7 @@ const Ticketactive = () => {
                                 </div>
                                 <p className="text-white">Admit One</p>
                             </div>
-                            <div className="px-14 border-l rounded-bl-xl border-b border-r py-10 relative">
+                            <div className="px-14 border-l rounded-bl-xl border-b py-10 relative">
                                 <div className="w-16 h-16 bg-white rounded-full absolute -right-8 -bottom-8 border-t"></div>
                                 <div className="mb-5">
                                     <p className="text-gray-400 text-sm">Movie</p>
