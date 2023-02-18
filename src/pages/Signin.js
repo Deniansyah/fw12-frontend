@@ -1,34 +1,37 @@
 import React from "react";
 import * as Icon from "react-feather";
 import { Link, useNavigate } from "react-router-dom";
-import http from "../helpers/http";
+import { useDispatch } from "react-redux";
+
+// import { login as loginAction } from "../redux/reducers/auth";
+import { loginAction } from "../redux/actions/auth";
 
 const Signin = () => {
   const [showAlert, setShowAlert] = React.useState(false);
+  const [messageError, setMessageError] = React.useState("Please fill all form");
   const [showPassword, setShowPassword] = React.useState(false);
   const navigate = useNavigate();
 
-  const loginRequest = async (event) => {
+  const dispatch = useDispatch();
+
+  const loginRequest = (event) => {
     event.preventDefault();
     const { value: email } = event.target.email;
     const { value: password } = event.target.password;
 
-    // if (email === 'admin@mail.com' && password === '1234') {
-    //     navigate('/home')
-    // }else {
-    //     setShowAlert(true)
-    // }
-    try {
-      const form = new URLSearchParams({
-        email,
-        password,
-      });
-      await http().post("/auth/login", form);
-      if (email.length !== 0 || password.length !== 0) {
-        navigate("/home");
-      }
-    } catch (e) {
-      setShowAlert(true);
+    if(email.length === 0 || password.length === 0){
+      setShowAlert(true)
+    }else {
+      const cb = () => {
+        navigate("/");
+      };
+
+      const err = (error) => {
+        const errMessage = error.response.data.message;
+        setMessageError(errMessage);
+      };
+      
+      dispatch(loginAction({ email, password, cb, err }));
     }
   };
 
@@ -58,7 +61,7 @@ const Signin = () => {
           </p>
           {showAlert && (
             <div className="bg-red-300 border border-red-600  rounded px-5 py-3 text-center">
-              <span>Wrong email or password</span>
+              <span>{messageError}</span>
             </div>
           )}
           <form onSubmit={loginRequest}>

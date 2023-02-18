@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import { loginAction } from "../actions/auth";
+
 const initialState = {
   token: null,
-}
+};
 
 const authReducer = createSlice({
   name: "auth",
@@ -18,7 +20,16 @@ const authReducer = createSlice({
       return initialState;
     },
   },
-  extraReducers: (build) => {},
+  extraReducers: (build) => {
+    build.addCase(loginAction.fulfilled, (state, { payload }) => {
+      state.token = payload;
+    });
+  },
 });
 
-export default authReducer.reducer
+export const {
+  // login,
+  logout,
+} = authReducer.actions;
+
+export default authReducer.reducer;

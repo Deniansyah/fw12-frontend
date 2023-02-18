@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 const Forgotpassword = () => {
   const navigate = useNavigate();
+  const [showSuccess, setShowSuccess] = React.useState(false);
+  const [showAlert, setShowAlert] = React.useState(false);
 
   const forgotRequest = async (event) => {
     event.preventDefault();
@@ -11,8 +13,15 @@ const Forgotpassword = () => {
     const form = new URLSearchParams({
       email,
     });
-    await http().post("/auth/forgotPassword", form);
-    navigate('/reset-password')
+    try {
+      await http().post("/auth/forgotPassword", form);
+      setTimeout(() => {
+        navigate("/reset-password");
+      }, 5000);
+      setShowSuccess(true);
+    } catch (error) {
+      setShowAlert(true)
+    }
   };
 
   return (
@@ -79,6 +88,16 @@ const Forgotpassword = () => {
                 name="email"
                 placeholder="Write your email"
               />
+              {showSuccess && (
+                <div className="bg-blue-300 border border-blue-600  rounded px-5 py-3 mb-4 text-center">
+                  <span>Contact admin for your code to reset password</span>
+                </div>
+              )}
+              {showAlert && (
+                <div className="bg-red-300 border border-red-600  rounded px-5 py-3 mb-4 text-center">
+                  <span>User not found!</span>
+                </div>
+              )}
               <button
                 type="submit"
                 className="mt-5 bg-violet-800 text-white py-3 rounded-lg text-center"
