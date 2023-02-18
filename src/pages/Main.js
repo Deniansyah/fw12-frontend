@@ -20,6 +20,8 @@ import Managemovie from "./Managemovie";
 import Dashboard from "./Dashboard";
 import Manageschedule from "./Manageschedule";
 
+import PrivateRoute from "../components/PrivateRoute";
+
 const Main = () => {
   return (
     <BrowserRouter>
@@ -35,7 +37,14 @@ const Main = () => {
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/order" element={<Orderpage />} />
         <Route path="/payment" element={<Paymentpage />} />
-        <Route path="/profil" element={<Profilpage />} />
+        <Route
+          path="/profil"
+          element={
+            <PrivateRoute>
+              <Profilpage />
+            </PrivateRoute>
+          }
+        />
         <Route path="/history" element={<Historypage />} />
         <Route path="/ticket-active" element={<Ticketactive />} />
         <Route path="/ticket-used" element={<Ticketused />} />

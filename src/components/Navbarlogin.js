@@ -35,7 +35,7 @@ const Navbarlogin = () => {
               src={require("../assets/images/home-profil.png")}
               alt="profil foto"
             />
-            <div className="hidden flex flex-col gap-1 py-3 px-5  w-28 rounded bg-white absolute right-0 top-14 shadow-lg group-hover:flex">
+            <div className="hidden gap-1 py-3 px-5  w-28 rounded bg-white absolute right-0 top-14 shadow-lg group-hover:flex flex-col">
               <Link to="/profil">Profil</Link>
               <Link to="/sign-in" onClick={() => dispatch(logoutAction())}>Logout</Link>
             </div>
