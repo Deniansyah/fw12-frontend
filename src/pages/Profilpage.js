@@ -11,6 +11,8 @@ import Navbarlogin from "../components/Navbarlogin";
 import Footer from "../components/Footer";
 
 const Profilpage = () => {
+  const [showTop, setShowTop] = React.useState(false);
+  const [showBottom, setShowBottom] = React.useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
   const token = useSelector((state) => state.auth.token);
@@ -29,7 +31,7 @@ const Profilpage = () => {
       firstName: e.target.firstName.value,
       lastName: e.target.lastName.value,
       email: e.target.email.value,
-      phoneNumber: e.target.phoneNumber.value
+      phoneNumber: e.target.phoneNumber.value,
     });
     setIsLoading(true);
     await http(token).patch(`/profile`, values);
@@ -38,12 +40,34 @@ const Profilpage = () => {
     setTimeout(() => {
       setMessage("");
     }, [5000]);
-    console.log("ok")
   };
+
+  const updatePassword = async (e) => {
+    e.preventDefault();
+    const values = new URLSearchParams({
+      password: e.target.password.value,
+      confirmPassword: e.target.confirmPassword.value,
+    });
+    setIsLoading(true);
+    await http(token).patch(`/profile`, values);
+    setMessage("Password Updated");
+    setIsLoading(false);
+    setTimeout(() => {
+      setMessage("");
+    }, [5000]);
+  }
 
   useEffect(() => {
     getUserProfile();
   });
+
+  const handlerShowTop = () => {
+    setShowTop(!showTop);
+  };
+
+  const handlerShowBottom = () => {
+    setShowBottom(!showBottom);
+  };
 
   return (
     <>
@@ -87,18 +111,18 @@ const Profilpage = () => {
               </Link>
             </div>
           </div>
-          <div className="bg-white rounded-md p-8 mb-5">
-            <div className="border-b pb-3 mb-7">
-              <p className="font-bold">Details Information</p>
-            </div>
-            <form onSubmit={updateUser}>
+          <form onSubmit={updateUser}>
+            <div className="bg-white rounded-md p-8 mb-5">
+              <div className="border-b pb-3 mb-7">
+                <p className="font-bold">Details Information</p>
+              </div>
+              {message && (
+                <div className="w-full flex justify-center bg-green-500 my-2 py-1 rounded-md">
+                  <p className="text-white">{message}</p>
+                </div>
+              )}
               <div className="flex gap-5">
                 <div className="basis-1/2 flex flex-col">
-                  {message && (
-                    <div className="w-full flex justify-center bg-green-500 my-2">
-                      <p className="text-white">{message}</p>
-                    </div>
-                  )}
                   <label>First Name</label>
                   <input
                     className="p-2 my-2 rounded-lg border border-slate-400 mb-4"
@@ -141,56 +165,78 @@ const Profilpage = () => {
                   />
                 </div>
               </div>
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="bg-violet-800 text-white py-2 px-14 rounded-md mb-5"
-              >
-                Update changes
-              </button>
-            </form>
-          </div>
-          {/* <button
-            type="submit"
-            disabled={isLoading}
-            className="bg-violet-800 text-white py-2 px-14 rounded-md mb-5"
-          >
-            Update changes
-          </button> */}
-          <div className="bg-white rounded-md p-8 mb-5">
-            <div className="border-b pb-3 mb-7">
-              <p className="font-bold">Account and Privacy</p>
             </div>
-            <form>
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="bg-violet-800 text-white py-2 px-14 rounded-md mb-5"
+            >
+              Update changes
+            </button>
+          </form>
+          <form onSubmit={updatePassword}>
+            <div className="bg-white rounded-md p-8 mb-5">
+              <div className="border-b pb-3 mb-7">
+                <p className="font-bold">Account and Privacy</p>
+              </div>
+              {message && (
+                <div className="w-full flex justify-center bg-green-500 my-2 py-1 rounded-md">
+                  <p className="text-white">{message}</p>
+                </div>
+              )}
               <div className="flex gap-5">
                 <div className="basis-1/2 flex flex-col">
-                  <label>Password</label>
-                  <div className="relative">
-                    <Icon.Eye className="absolute right-4 top-4 text-gray-400" />
+                  <div className="flex flex-col relative">
+                    <label>New Password</label>
                     <input
                       className="p-2 my-2 rounded-lg border border-slate-400 mb-4 w-[100%]"
-                      type="password"
-                      placeholder="Write your password"
+                      type={showTop ? "text" : "password"}
+                      name="password"
+                      placeholder="Write your new password"
                     />
+                    <label
+                      onClick={handlerShowTop}
+                      className="absolute right-5 top-10 cursor-pointer"
+                    >
+                      {showTop ? (
+                        <Icon.EyeOff className="absolute right-[-5px] text-gray-400" />
+                      ) : (
+                        <Icon.Eye className="absolute right-[-5px] text-gray-400" />
+                      )}
+                    </label>
                   </div>
                 </div>
                 <div className="basis-1/2 flex flex-col">
-                  <label>Confirm Password</label>
-                  <div className="relative">
-                    <Icon.Eye className="absolute right-4 top-4 text-gray-400" />
+                  <div className="flex flex-col relative">
+                    <label>Confirm Password</label>
                     <input
                       className="p-2 my-2 rounded-lg border border-slate-400 mb-4 w-[100%]"
-                      type="password"
+                      type={showBottom ? "text" : "password"}
+                      name="confirmPassword"
                       placeholder="Write your confirm password"
                     />
+                    <label
+                      onClick={handlerShowBottom}
+                      className="absolute right-5 top-10 cursor-pointer"
+                    >
+                      {showBottom ? (
+                        <Icon.EyeOff className="absolute right-[-5px] text-gray-400" />
+                      ) : (
+                        <Icon.Eye className="absolute right-[-5px] text-gray-400" />
+                      )}
+                    </label>
                   </div>
                 </div>
               </div>
-            </form>
-          </div>
-          <button className="bg-violet-800 text-white py-2 px-14 rounded-md">
-            Update changes
-          </button>
+            </div>
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="bg-violet-800 text-white py-2 px-14 rounded-md"
+            >
+              Update changes
+            </button>
+          </form>
         </div>
       </div>
       <Footer></Footer>
