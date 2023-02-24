@@ -19,7 +19,7 @@ const Listmovie = () => {
 
   useEffect(() => {
     getMovie();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, sort, search]);
 
   const handleNext = () => {
@@ -58,14 +58,17 @@ const Listmovie = () => {
   return (
     <>
       <Navbarlogin></Navbarlogin>
-      <div className="px-[130px] py-10 bg-gray-100">
-        <div className="flex mb-5">
+      <div className="lg:px-[130px] md:px-10 px-5 py-10 bg-gray-100">
+        <div className="flex flex-col lg:flex-row md:flex-row mb-5">
           <div className="grow mb-5">
             <h2 className="text-lg font-bold">List Movie</h2>
           </div>
           <div className="flex h-[39px]">
             <div className="bg-white pr-3 rounded-md">
-              <select className="py-2 px-4 rounded-md focus:outline-none" onClick={(e) => sortLetter(e.target.value)}>
+              <select
+                className="py-2 px-4 rounded-md focus:outline-none"
+                onClick={(e) => sortLetter(e.target.value)}
+              >
                 <option className="hidden">Sort</option>
                 <option value="ASC">A-Z</option>
                 <option value="DESC">Z-A</option>
@@ -81,44 +84,42 @@ const Listmovie = () => {
             </div>
           </div>
         </div>
-        <div>
-          <div className="flex gap-5 mb-[60px] overflow-x-auto pb-2">
-            <div className="bg-violet-800 text-white py-2 px-5 rounded-md border-2 border-violet-800">
-              September
-            </div>
-            <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
-              October
-            </div>
-            <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
-              November
-            </div>
-            <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
-              Desember
-            </div>
-            <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
-              Januari
-            </div>
-            <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
-              Februari
-            </div>
-            <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
-              Maret
-            </div>
-            <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
-              April
-            </div>
-            <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
-              Februari
-            </div>
-            <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
-              Maret
-            </div>
-            <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
-              April
-            </div>
+        <div className="flex gap-5 lg:mb-[20px] md:mb-[20px] mb-[10px] overflow-x-auto pb-2">
+          <div className="bg-violet-800 text-white py-2 px-5 rounded-md border-2 border-violet-800">
+            September
+          </div>
+          <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
+            October
+          </div>
+          <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
+            November
+          </div>
+          <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
+            Desember
+          </div>
+          <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
+            Januari
+          </div>
+          <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
+            Februari
+          </div>
+          <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
+            Maret
+          </div>
+          <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
+            April
+          </div>
+          <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
+            Februari
+          </div>
+          <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
+            Maret
+          </div>
+          <div className="bg-white text-violet-800 py-2 px-5 rounded-md border-2 border-violet-800">
+            April
           </div>
         </div>
-        <div className="bg-white mb-5 rounded-md p-12 flex flex-col gap-5">
+        <div className="bg-white mb-5 rounded-md lg:py-12 md:py-8 py-7 flex flex-col gap-5">
           <div className="flex flex-wrap justify-center gap-5">
             {movie?.map((data) => (
               <div className="p-7 border-2 border-gray rounded-lg flex-none">
