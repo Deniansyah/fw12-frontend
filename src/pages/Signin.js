@@ -30,7 +30,7 @@ const Signin = () => {
         const errMessage = error.response.data.message;
         setMessageError(errMessage);
       };
-      
+
       dispatch(loginAction({ email, password, cb, err }));
     }
   };
@@ -45,7 +45,7 @@ const Signin = () => {
         <div className="bg-violet-900/80 h-screen">
           <div className="flex flex-col justify-center items-center h-screen">
             <img
-              className="w-96"
+              className="lg:w-96 md:w-72"
               src={require("../assets/images/tickitz-big.png")}
               alt="bg"
             />
@@ -54,7 +54,7 @@ const Signin = () => {
         </div>
       </div>
       <div className="md:basis-1/2 w-full">
-        <div className="p-20">
+        <div className="lg:px-20 md:p-10 p-5">
           <h1 className="text-5xl font-bold pb-4">Sign In</h1>
           <p className="text-slate-400 pb-5 text-lg">
             Sign in with your data that you entered during your registration

@@ -55,11 +55,11 @@ const Signup = () => {
 
   return (
     <div className="flex h-screen">
-      <div className="md:basis-1/2 bg-[url('../images/background.png')] hidden md:block">
+      <div className="md:basis-1/2 bg-[url('../images/background.png')] hidden lg:block md:block">
         <div className="bg-violet-900/80 h-screen">
           <div className="flex flex-col justify-center items-center h-screen">
             <img
-              className="w-96"
+              className="lg:w-96 md:w-72"
               src={require("../assets/images/tickitz-big.png")}
               alt="bg"
             />
@@ -68,7 +68,7 @@ const Signup = () => {
         </div>
       </div>
       <div className="md:basis-1/2 overflow-y-auto w-full">
-        <div className="p-20">
+        <div className="lg:p-20 md:p-10 px-5 py-10">
           <h1 className="text-5xl font-bold pb-4">Sign Up</h1>
           <p className="text-slate-400 pb-5 text-lg">
             Fill your additional details

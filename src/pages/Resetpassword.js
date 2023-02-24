@@ -46,7 +46,7 @@ const Resetpassword = () => {
 
   return (
     <div className="flex h-screen">
-      <div className="basis-1/2 bg-[url('../images/background.png')]">
+      <div className="md:basis-1/2 bg-[url('../images/background.png')] hidden lg:block md:block">
         <div className="bg-violet-900/80 h-screen">
           <div className="flex flex-col pl-14 py-10 h-screen">
             <img
@@ -93,8 +93,8 @@ const Resetpassword = () => {
           </div>
         </div>
       </div>
-      <div className="basis-1/2 overflow-y-auto">
-        <div className="px-20 pt-10">
+      <div className="lg:basis-1/2 md:basis-1/2 w-full overflow-y-auto">
+        <div className="lg:p-20 md:p-10 px-5 py-10">
           <h1 className="text-2xl font-bold pb-4">
             Fill your complete password
           </h1>
@@ -106,7 +106,9 @@ const Resetpassword = () => {
           )}
           {showSuccess && (
             <div className="bg-green-300 border border-green-600  rounded px-5 py-3 text-center">
-              <span>Reset succesfuly, Please wait for redirect to re-login</span>
+              <span>
+                Reset succesfuly, Please wait for redirect to re-login
+              </span>
             </div>
           )}
           <form onSubmit={resetRequest}>

@@ -26,7 +26,7 @@ const Forgotpassword = () => {
 
   return (
     <div className="flex h-screen">
-      <div className="basis-1/2 bg-[url('../images/background.png')]">
+      <div className="md:basis-1/2 lg:basis-1/2 bg-[url('../images/background.png')] hidden lg:block md:block">
         <div className="bg-violet-900/80 h-screen">
           <div className="flex flex-col pl-14 py-10 h-screen">
             <img
@@ -73,8 +73,8 @@ const Forgotpassword = () => {
           </div>
         </div>
       </div>
-      <div className="basis-1/2 overflow-y-auto">
-        <div className="p-20">
+      <div className="lg:basis-1/2 md:basis-1/2 w-full">
+        <div className="lg:p-20 md:p-10 px-5 py-10">
           <h1 className="text-2xl font-bold pb-4">Fill your complete email</h1>
           <p className="text-slate-400 pb-5 text-lg">
             we'll send a link to your email shortly
