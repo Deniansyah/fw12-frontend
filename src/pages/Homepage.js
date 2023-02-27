@@ -158,7 +158,7 @@ const Homepage = () => {
           })} */}
           <div className="p-7 border-2 border-gray rounded-lg flex-none">
             <img
-              className="w-[140px] pb-5"
+              className="w-[130px] pb-5"
               src={require("../assets/images/film1-big.png")}
               alt="film1"
             />

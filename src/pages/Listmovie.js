@@ -58,8 +58,8 @@ const Listmovie = () => {
   return (
     <>
       <Navbarlogin></Navbarlogin>
-      <div className="lg:px-[130px] md:px-10 px-5 py-10 bg-gray-100">
-        <div className="flex flex-col lg:flex-row md:flex-row mb-5">
+      <div className="lg:px-[130px] md:px-10 py-10 bg-gray-100">
+        <div className="flex flex-col lg:flex-row md:flex-row mb-5 px-5">
           <div className="grow mb-5">
             <h2 className="text-lg font-bold">List Movie</h2>
           </div>
@@ -84,7 +84,7 @@ const Listmovie = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-5 lg:mb-[20px] md:mb-[20px] mb-[10px] overflow-x-auto pb-2">
+        <div className="flex gap-5 lg:mb-[20px] md:mb-[20px] mb-[10px] overflow-x-auto pb-2 px-5">
           <div className="bg-violet-800 text-white py-2 px-5 rounded-md border-2 border-violet-800">
             September
           </div>
@@ -124,13 +124,13 @@ const Listmovie = () => {
             {movie?.map((data) => (
               <div className="p-7 border-2 border-gray rounded-lg flex-none">
                 <img
-                  className="w-[135px] pb-5"
+                  className="w-[110px] lg:w-[135px] md:w-[135px] pb-5"
                   src={data.picture}
                   alt="film1"
                 />
                 <div className="text-center">
-                  <h2 className="text-lg font-bold w-[135px]">{data.title}</h2>
-                  <p className="text-sm text-gray-400 pb-5 w-[135px]">
+                  <h2 className="text-lg font-bold w-[110px] lg:w-[135px] md:w-[135px]">{data.title}</h2>
+                  <p className="text-sm text-gray-400 pb-5 w-[110px] lg:w-[135px] md:w-[135px]">
                     {data.genres}
                   </p>
                   <Link
