@@ -1,48 +1,40 @@
-import React from "react";
-// import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Navbarlogin from "../components/Navbarlogin"
 import Footer from "../components/Footer";
-// import Card from "../components/card";
-// import Card2 from "../components/card2";
 
 import { useSelector } from "react-redux";
 
+import http from "../helpers/http";
+
 const Homepage = () => {
   const token = useSelector((state) => state.auth.token)
+  const [upcoming, setUpcoming] = useState([]);
+  const [nowshowing, setNowshowing] = useState([]);
 
-  // nowshowing
-  // const [nowShowing, setNowShowing] = React.useState([])
-  // React.useEffect(() => {
-  //     getNowShowing().then((data) => {
-  //         setNowShowing(data.results)
-  //     })
+  useEffect(() => {
+    getUpcoming();
+    getNowshowing();
+  }, [])
 
-  // }, [])
+  const getUpcoming = async () => {
+    try {
+      const dataUpcoming = await http().get('/movies/upcoming')
+      setUpcoming(dataUpcoming.data.results)
+    } catch (error) {
+      setUpcoming([])
+    }
+  }
 
-  // const getNowShowing = async () => {
-  //     const {data} = await axios.get(
-  //         "http://localhost:8888/movies/now"
-  //     )
-  //     return data
-  // }
-
-  // upcoming
-  // const [upcoming, setUpcoming] = React.useState([])
-  // React.useEffect(() => {
-  //     getUpcoming().then((data) => {
-  //         setUpcoming(data.results)
-  //     })
-
-  // }, [])
-
-  // const getUpcoming = async () => {
-  //     const {data} = await axios.get(
-  //         "http://localhost:8888/movies/upcoming?month=10"
-  //     )
-  //     return data
-  // }
+  const getNowshowing = async () => {
+    try {
+      const dataNowshowing = await http().get('/movies/now')
+      setNowshowing(dataNowshowing.data.results)
+    } catch (error) {
+      setNowshowing([])
+    }
+  }
 
   return (
     <>
@@ -81,28 +73,25 @@ const Homepage = () => {
           </Link>
         </div>
         <div className="flex gap-5 overflow-x-auto pb-2 items-start">
-          {/* {nowShowing?.map((item) => {
-            return <Card data={item} />;
-          })} */}
-          <div className="group p-6 border-2 border-white rounded-lg flex-none text-center hover:bg-white">
-            <img
-              className="w-[130px]"
-              src={require("../assets/images/film1-big.png")}
-              alt="film1"
-            />
-            <div className="hidden group-hover:block">
-              <h2 className="text-lg font-bold mt-2">Spider-Man</h2>
-              <p className="text-sm text-gray-400 pb-5">
-                Action, Marvel, Sci-Fi
-              </p>
-              <Link
-                to="/movie-detail"
-                className="bg-white text-violet-800 py-1 px-2 flex w-full justify-center rounded-md border-2 border-violet-800"
-              >
-                Details
-              </Link>
+          {nowshowing?.map((data) => (
+            <div className="group p-6 border-2 border-white rounded-lg flex-none text-center hover:bg-white">
+              <img className="w-[130px]" src={data.picture} alt="film1" />
+              <div className="hidden group-hover:block">
+                <h2 className="text-lg font-bold mt-2 w-[130px]">
+                  {data.title}
+                </h2>
+                <p className="text-sm text-gray-400 pb-5 w-[130px]">
+                  {data.genres}
+                </p>
+                <Link
+                  to="/movie-detail"
+                  className="bg-white text-violet-800 py-1 px-2 flex w-full justify-center rounded-md border-2 border-violet-800"
+                >
+                  Details
+                </Link>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
       <div
@@ -153,28 +142,23 @@ const Homepage = () => {
           </div>
         </div>
         <div className="flex pb-2 gap-5 overflow-x-auto">
-          {/* {upcoming?.map((item) => {
-            return <Card2 data={item} />;
-          })} */}
-          <div className="p-7 border-2 border-gray rounded-lg flex-none">
-            <img
-              className="w-[130px] pb-5"
-              src={require("../assets/images/film1-big.png")}
-              alt="film1"
-            />
-            <div className="text-center">
-              <h2 className="text-lg font-bold">Spider-Man</h2>
-              <p className="text-sm text-gray-400 pb-5">
-                Action, Marvel, Sci-Fi
-              </p>
-              <Link
-                to="/movie-detail"
-                className="bg-white text-violet-800 py-1 px-2 flex w-full justify-center rounded-md border-2 border-violet-800"
-              >
-                Details
-              </Link>
+          {upcoming?.map((data) => (
+            <div className="p-7 border-2 border-gray rounded-lg flex-none">
+              <img className="w-[130px] pb-5" src={data.picture} alt="film1" />
+              <div className="text-center">
+                <h2 className="text-lg font-bold w-[130px]">{data.title}</h2>
+                <p className="text-sm text-gray-400 pb-5 w-[130px]">
+                  {data.genres}
+                </p>
+                <Link
+                  to="/movie-detail"
+                  className="bg-white text-violet-800 py-1 px-2 flex w-full justify-center rounded-md border-2 border-violet-800"
+                >
+                  Details
+                </Link>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
       <div
