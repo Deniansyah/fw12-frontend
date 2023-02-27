@@ -130,8 +130,8 @@ const Listmovie = () => {
                 />
                 <div className="text-center">
                   <h2 className="text-lg font-bold w-[135px]">{data.title}</h2>
-                  <p className="text-sm text-gray-400 pb-5">
-                    Action, Marvel, Sci-Fi
+                  <p className="text-sm text-gray-400 pb-5 w-[135px]">
+                    {data.genres}
                   </p>
                   <Link
                     to="/movie-detail"
