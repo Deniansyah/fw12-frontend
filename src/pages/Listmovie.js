@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import Navbarlogin from "../components/Navbarlogin";
 import * as Icon from "react-feather";
 import Footer from "../components/Footer";
@@ -57,7 +58,7 @@ const Listmovie = () => {
 
   return (
     <>
-      <Navbarlogin></Navbarlogin>
+      {!token ? <Navbar /> : <Navbarlogin />}
       <div className="lg:px-[130px] md:px-10 py-10 bg-gray-100">
         <div className="flex flex-col lg:flex-row md:flex-row mb-5 px-5">
           <div className="grow mb-5">
@@ -129,7 +130,9 @@ const Listmovie = () => {
                   alt="film1"
                 />
                 <div className="text-center">
-                  <h2 className="text-lg font-bold w-[110px] lg:w-[135px] md:w-[135px]">{data.title}</h2>
+                  <h2 className="text-lg font-bold w-[110px] lg:w-[135px] md:w-[135px]">
+                    {data.title}
+                  </h2>
                   <p className="text-sm text-gray-400 pb-5 w-[110px] lg:w-[135px] md:w-[135px]">
                     {data.genres}
                   </p>
