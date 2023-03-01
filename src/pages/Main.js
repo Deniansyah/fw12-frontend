@@ -7,7 +7,7 @@ import Forgotpassword from "./Forgotpassword";
 import Homepage from "./Homepage";
 // import Homewithsignin from "./Homewithsignin";
 import Listmovie from "./Listmovie";
-import Moviedetail from "./Moviedetail";
+// import Moviedetail from "./Moviedetail";
 import Detail from "./Detail";
 import Orderpage from "./Orderpage";
 import Paymentpage from "./Paymentpage";
@@ -33,7 +33,7 @@ const Main = () => {
         <Route path="/forgot-password" element={<Forgotpassword />} />
         {/* <Route path="/home" element={<Homewithsignin />} /> */}
         <Route path="/list-movie" element={<Listmovie />} />
-        <Route path="/movie-detail" element={<Moviedetail />} />
+        {/* <Route path="/movie-detail" element={<Moviedetail />} /> */}
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/order" element={<Orderpage />} />
         <Route path="/payment" element={<Paymentpage />} />

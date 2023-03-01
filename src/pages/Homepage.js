@@ -84,7 +84,7 @@ const Homepage = () => {
                   {data.genres}
                 </p>
                 <Link
-                  to="/movie-detail"
+                  to={"/detail/" + data.id}
                   className="bg-white text-violet-800 py-1 px-2 flex w-full justify-center rounded-md border-2 border-violet-800"
                 >
                   Details
@@ -151,7 +151,7 @@ const Homepage = () => {
                   {data.genres}
                 </p>
                 <Link
-                  to="/movie-detail"
+                  to={"/detail/" + data.id}
                   className="bg-white text-violet-800 py-1 px-2 flex w-full justify-center rounded-md border-2 border-violet-800"
                 >
                   Details
